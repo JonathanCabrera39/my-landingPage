@@ -2,7 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@layer components {
+  body {
+    @apply m-0 p-0;
+  }
+  .contact-bg {
+    background-image: url("./image/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 90% 140%; /* desktop */
+  }
+.hero-bg {
+  background-image: url("./image/logo.png");
+  background-position: center 80%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 90% 140%;
+}
+
+  @media (max-width: 899px) {
+    .contact-bg {
+      background-size: 100% 120%; /* más compacto en móvil */
+      background-attachment: fixed; /* fixed no funciona bien en iOS */
+    }
+  }
+
+  @media (max-width: 659px) {
+    .contact-bg {
+      background-size: 110% 120%; /* más compacto en móvil */
+      background-attachment: fixed; /* fixed no funciona bien en iOS */
+    }
+  }
+
+  @media (max-width: 520px) {
+    .contact-bg {
+      background-size: 120% 130%; /* ajuste fino para móviles pequeños */
+    }
+  }
+
+  @media (max-width: 400px) {
+    .contact-bg {
+      background-size: 140% 130%; /* ajuste fino para móviles pequeños */
+    }
+  }
+}
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -16,9 +62,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0rem;
   text-align: center;
 }
 
@@ -32,11 +78,10 @@ a:hover {
 }
 
 body {
+  font-family: "Inter", sans-serif;
+  width: 100%;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
 h1 {
@@ -63,62 +108,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Tailwind Elements */
-.title {
-  @apply text-white font-bold mb-24;
-}
-
-.title-lg {
-  @apply text-4xl text-center mb-12;
-}
-
-.title-md {
-  @apply text-xl mb-2;
-}
-
-.subtitle {
-  @appy text-gray-300 text-lg mb-3;
-}
-
-.description {
-  @apply text-gray-400 text-sm;
-}
-
-/* Page */
-.page-container {
-  @apply min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8;
-}
-
-.page-content {
-  @apply max-w-full mx-auto;
-}
-
-/* Grid */
-.grid-container {
-  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
-}
-
-/* Card */
-.card {
-  @apply bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105;
-}
-
-.card-image-container {
-  @apply relative h-48 overflow-hidden;
-}
-
-.card-overlay {
-  @apply absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300;
-}
-
-.card-icon {
-  @apply text-4xl;
-}
-
-.card-content {
-  @apply p-6;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -130,4 +119,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

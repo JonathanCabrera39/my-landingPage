@@ -19,10 +19,10 @@ export default function Services() {
   ];
 
   return (
-    <section id="servicios" className="py-20 bg-white">
+    <section id="servicios" className="w-full py-20 bg-gradient-to-r from-blue-950 to-blue-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">Lo que ofrezco</h2>
+        <div className=" bg-gray-50 text-center mb-16 rounded-xl">
+          <h2 className="  text-3xl md:text-4xl  font-bold text-gray-800 ">Lo que ofrezco</h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
             Soluciones simples, rápidas y efectivas para emprendedores que quieren vender YA.
           </p>

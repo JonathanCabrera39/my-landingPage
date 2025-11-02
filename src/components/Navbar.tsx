@@ -1,23 +1,25 @@
 // src/components/Navbar.tsx
 import { useState } from 'react';
 //import { Servicios } from './Servicios';
+import logo from "../image/logo.png";
+import subjona from "../image/subjona.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-black shadow-sm sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+    <nav className="bg-blue-950 shadow-sm sticky top-0 z-50">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-24">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-xl font-bold text-gray-400">MiMarca</span>
+           <img className="bg-cover w-28 h-24 " src={logo} alt="Subjona" />
           </div>
 
           {/* Menú desktop */}
           <div className="hidden md:flex items-center space-x-8 ">
             <a href="#inicio" className="text-gray-600 hover:text-indigo-600 font-medium hover:scale-125">Inicio</a>
-            <span className="text-gray-600 hover:text-indigo-600 font-medium hover:scale-125">Servicios</span>
+            <a href="#servicios" className="text-gray-600 hover:text-indigo-600 font-medium hover:scale-125">Servicios</a>
             <a href="#contacto" className="text-gray-600 hover:text-indigo-600 font-medium hover:scale-125">Contacto</a>
             <button className="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-900 transition">
               Cotizar

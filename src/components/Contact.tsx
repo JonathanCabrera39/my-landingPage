@@ -1,10 +1,20 @@
 // src/components/Contact.tsx
+import subjona from "../image/logo.png";
+const image = `url(${subjona})`;
+
 export default function Contact() {
   return (
-    <section id="contacto" className="py-20 bg-white">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">¿Listo para empezar?</h2>
-        <p className="mt-4 text-lg text-gray-600">
+    <section 
+      id="contacto" 
+      className="w-full py-20 md:py-32 relative contact-bg"
+    
+    >
+      {/* Overlay oscuro para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-black/60"></div>
+
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-white">¿Listo para empezar?</h2>
+        <p className="mt-4 text-lg text-gray-200">
           Escríbeme por WhatsApp o llena este formulario. Te respondo en menos de 2 horas.
         </p>
 
@@ -14,7 +24,7 @@ export default function Contact() {
           className="mt-10 space-y-6 text-left"
         >
           <div>
-            <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+            <label htmlFor="name" className="block text-gray-200 font-medium mb-2">
               Nombre
             </label>
             <input
@@ -22,13 +32,13 @@ export default function Contact() {
               id="name"
               name="name"
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white/90 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               placeholder="Tu nombre"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+            <label htmlFor="email" className="block text-gray-200 font-medium mb-2">
               Email
             </label>
             <input
@@ -36,13 +46,13 @@ export default function Contact() {
               id="email"
               name="email"
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white/90 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               placeholder="tu@email.com"
             />
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+            <label htmlFor="message" className="block text-gray-200 font-medium mb-2">
               Mensaje
             </label>
             <textarea
@@ -50,7 +60,7 @@ export default function Contact() {
               name="message"
               required
               rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white/90 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               placeholder="Cuéntame tu proyecto..."
             ></textarea>
           </div>

@@ -1,12 +1,12 @@
 // src/components/Hero.tsx
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+    <section className="w-full hero-bg text-white">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center bg-black/60">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
           Transforma tu idea en realidad
         </h1>
-        <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-indigo-100">
+        <p className="mt-6 text-lg font-medium md:text-2xl max-w-3xl mx-auto text-cyan-100">
           Diseño landing pages profesionales en menos de 48 horas. Listas para vender, con WhatsApp integrado y 100% responsive.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
