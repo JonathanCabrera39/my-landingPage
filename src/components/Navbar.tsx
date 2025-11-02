@@ -2,7 +2,7 @@
 import { useState } from 'react';
 //import { Servicios } from './Servicios';
 import logo from "../image/logo.png";
-import subjona from "../image/subjona.png";
+//import subjona from "../image/subjona.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
