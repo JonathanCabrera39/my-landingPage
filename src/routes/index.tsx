@@ -1,6 +1,7 @@
 // src/routes/index.tsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
+import AppVet from '../landing-vet/components/Appvet';
 
 
 export default function AppRoutes() {
@@ -8,6 +9,7 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/vet" element={< AppVet/>} />
         {/* <Route path="/navbar" element={<Navbar />} /> */}
         {/* <Route path="/app" element={<App />} /> */}
         {/* <Route path="/hero" element={<Hero />} /> */}

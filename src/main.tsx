@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import AppRoutes from './routes';
+//import AppVet from './landing-vet/components/Appvet';
 import './index.css';
 //import './App.css';
 
