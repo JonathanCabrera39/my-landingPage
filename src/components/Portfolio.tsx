@@ -1,16 +1,28 @@
 // src/components/Portfolio.tsx
 import { useState } from 'react';
 import { motion, AnimatePresence ,Variants } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+
+// Dentro del componente Portfolio:
 
 export default function Portfolio() {
+  const navigate = useNavigate();
   const [showAllProfessionals, setShowAllProfessionals] = useState(false);
   const [showAllCreators, setShowAllCreators] = useState(false);
 
-  const professionals = [
-    { id: 'vet', title: "Veterinario", desc: "Landing para clínica veterinaria con horarios, servicios y WhatsApp.", gradient: "from-emerald-900 to-teal-800" },
-    { id: 'gym', title: "Coach de Ejercicio", desc: "Promoción de planes de entrenamiento + formulario de contacto.", gradient: "from-amber-900 to-orange-800" },
-    { id: 'doctor', title: "Doctor", desc: "Consultorio médico con turnos online y datos de contacto claros.", gradient: "from-blue-950 to-blue-800" },
-    { id: 'lawyer', title: "Abogado", desc: "Servicios legales con enfoque en confianza y profesionalismo.", gradient: "from-gray-900 to-zinc-800" },
+  interface ProjectItem {
+  id: string;
+  title: string;
+  desc: string;
+  gradient: string;
+  path: string; // obligatorio
+}
+  
+  const professionals:ProjectItem[] = [
+    { id: 'vet', title: "Veterinario", desc: "Landing para clínica veterinaria con horarios, servicios y WhatsApp.", gradient: "from-emerald-900 to-teal-800",path: "/vet"},
+    { id: 'gym', title: "Coach de Ejercicio", desc: "Promoción de planes de entrenamiento + formulario de contacto.", gradient: "from-amber-900 to-orange-800" ,path: "/vet"},
+    { id: 'doctor', title: "Doctor", desc: "Consultorio médico con turnos online y datos de contacto claros.", gradient: "from-blue-950 to-blue-800",path: "/vet" },
+    { id: 'lawyer', title: "Abogado", desc: "Servicios legales con enfoque en confianza y profesionalismo.", gradient: "from-gray-900 to-zinc-800",path: "/vet" },
   ];
 
   const creators = [
@@ -68,13 +80,14 @@ const itemVariants: Variants = {
             <AnimatePresence>
               {(showAllProfessionals ? professionals : professionals.slice(0, 2)).map((item, i) => (
                 <motion.div
-                  key={item.id}
-                  custom={i}
-                  variants={itemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden w-full max-w-md"
+                key={item.id}
+                custom={i}
+                variants={itemVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden w-full max-w-md"
+                onClick={() => { if(item.path) navigate(item.path); }}
                 >
                   <div className={`h-32 bg-gradient-to-r ${item.gradient} flex items-center justify-center`}>
                     <span className="text-white font-bold text-center px-3">{item.title}</span>
