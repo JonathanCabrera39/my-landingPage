@@ -1,10 +1,8 @@
 // src/components/Contact.tsx
-<<<<<<< HEAD
+
 //import subjona from "../image/logo.png";
 //const image = `url(${subjona})`;
 
-=======
->>>>>>> 60fb99e7fac78860f6ec89378e5d26aa2f60e6fe
 export default function Contact() {
   return (
     <section 
