@@ -2,7 +2,7 @@
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/593999999999?text=¡Hola!%20Vi%20tu%20landing%20y%20quiero%20una."
+      href="https://wa.me/542665276622?text=¡Hola%20Subjona!%20Vi%20tu%20landing%20y%20quiero%20una%20cotizaci%C3%B3n%20para%20mi%20proyecto.%0A%0APor%20favor%2C%20para%20darte%20un%20presupuesto%20exacto%3A%0A1.%20%BFQu%C3%A9%20necesit%C3%A1s%3F%20(ej%3A%20landing%20para%20veterinario%2C%20beatmaker%2C%20gimnasio...)%0A2.%20%BFTen%C3%A9s%20deadline%20o%20fecha%20l"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition transform hover:scale-110"
