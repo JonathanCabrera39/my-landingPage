@@ -5,6 +5,8 @@
 @layer components {
   body {
     @apply m-0 p-0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
   }
   .contact-bg {
     background-image: url("./image/logo.png");
@@ -13,15 +15,16 @@
     background-attachment: fixed;
     background-size: 90% 140%; /* desktop */
   }
-.hero-bg {
-  background-image: url("./image/logo.png");
-  background-position: center 80%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 90% 140%;
-}
+  .hero-bg {
+    background-image: url("./image/logo.png");
+    background-position: center 80%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 90% 140%;
+  }
 
   @media (max-width: 899px) {
+    .hero-bg,
     .contact-bg {
       background-size: 100% 120%; /* más compacto en móvil */
       background-attachment: fixed; /* fixed no funciona bien en iOS */
@@ -29,6 +32,7 @@
   }
 
   @media (max-width: 659px) {
+    .hero-bg,
     .contact-bg {
       background-size: 110% 120%; /* más compacto en móvil */
       background-attachment: fixed; /* fixed no funciona bien en iOS */
@@ -36,15 +40,30 @@
   }
 
   @media (max-width: 520px) {
+    .hero-bg,
     .contact-bg {
       background-size: 120% 130%; /* ajuste fino para móviles pequeños */
     }
   }
 
   @media (max-width: 400px) {
+    .hero-bg,
     .contact-bg {
       background-size: 140% 130%; /* ajuste fino para móviles pequeños */
     }
+  }
+
+  /*beat*/
+  @keyframes spin-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 4s linear infinite;
   }
 }
 

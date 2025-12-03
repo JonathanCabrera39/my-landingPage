@@ -2,14 +2,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import AppVet from "../landing-vet/components/Appvet";
-import ScrollToTop from "../components/ScrollToTop";
+import ScrollToTop from "../components/ui/ScrollToTop";
 import GymLanding from "../landing-vet/components/GymLanding";
 import DoctorLanding from "../landing-vet/components/DoctorLanding";
 import LawyerLanding from "../landing-vet/components/LawyerLanding";
 import GameDevLanding from "../landing-vet/components/GameDevLanding";
-import BeatmakerLanding from "../landing-vet/components/BeatmakerLanding";
+import BeatmakerLanding from "../landing-vet/components/BeatmakerLanding.0.1";
 import SingerLanding from "../landing-vet/components/SingerLanding";
 import GuitaristLanding from "../landing-vet/components/GuitaristLanding";
+import UrbanRitualDocument from "../landing-vet/components/UrbanRitualDocument";
+
 
 export default function AppRoutes() {
   return (
@@ -25,11 +27,7 @@ export default function AppRoutes() {
         <Route path="/baet" element={<BeatmakerLanding />} />
         <Route path="/singer" element={<SingerLanding />} />
         <Route path="/guitar" element={<GuitaristLanding />} />
-
-        {/* <Route path="/navbar" element={<Navbar />} /> */}
-        {/* <Route path="/app" element={<App />} /> */}
-        {/* <Route path="/hero" element={<Hero />} /> */}
-
+        <Route path="/urban-ritual" element={<UrbanRitualDocument />} />
         {/* Aquí añadirás más rutas si vendes landing + página de gracias, etc. */}
       </Routes>
     </BrowserRouter>

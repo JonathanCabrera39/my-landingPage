@@ -1,5 +1,7 @@
 // src/pages/GameDevLanding.tsx
 import { useState } from 'react';
+import { YouTubeSection } from '../../hooks/YouTubeSection';
+import UrbanRitualDocument from './UrbanRitualDocument';
 
 export default function GameDevLanding() {
   const [projectType, setProjectType] = useState("colaboracion");
@@ -92,6 +94,9 @@ export default function GameDevLanding() {
         </div>
       </section>
 
+        {/*api*/}
+      <YouTubeSection/>
+      <UrbanRitualDocument/>
       {/* Sobre mí */}
       <section className="w-full py-20 bg-black/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

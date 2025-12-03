@@ -1,5 +1,6 @@
 // src/pages/SingerLanding.tsx
-import { useState } from 'react';
+import { useState } from "react";
+import { YouTubeSection } from "../../hooks/YouTubeSection";
 
 export default function SingerLanding() {
   const [eventType, setEventType] = useState("show");
@@ -32,7 +33,7 @@ export default function SingerLanding() {
             Voz, metal y emociones en cada nota
           </h1>
           <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-indigo-100">
-            Cantante con estilo único, fusionando metal, rock y melodía.  
+            Cantante con estilo único, fusionando metal, rock y melodía.
             Disponible para shows en vivo, festivales y colaboraciones.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
@@ -57,22 +58,27 @@ export default function SingerLanding() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white">Mi música</h2>
-            <p className="mt-4 text-gray-400">Escuchá mis últimos lanzamientos.</p>
+            <p className="mt-4 text-gray-400">
+              Escuchá mis últimos lanzamientos.
+            </p>
           </div>
 
           {/* Reproductor placeholder */}
           <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
             <div className="h-48 flex items-center justify-center text-gray-500">
-             <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/zcx61btiw1k"
-            ></iframe>
-          
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/zcx61btiw1k"
+              ></iframe>
             </div>
-            <p className="text-center mt-4 text-gray-300">EP: "Crimson Soul" – Ya disponible en todas las plataformas</p>
+            <p className="text-center mt-4 text-gray-300">
+              EP: "Crimson Soul" – Ya disponible en todas las plataformas
+            </p>
           </div>
         </div>
       </section>
+
+    
 
       {/* Próximos shows */}
       <section id="shows" className="w-full py-20 bg-black/30">
@@ -83,16 +89,31 @@ export default function SingerLanding() {
           </div>
           <div className="space-y-6">
             {[
-              { date: "15 Nov 2025", venue: "Teatro Flores", city: "Buenos Aires", status: "Tickets a la venta" },
-              { date: "22 Nov 2025", venue: "Festival Metal Córdoba", city: "Córdoba", status: "Próximamente" },
+              {
+                date: "15 Nov 2025",
+                venue: "Teatro Flores",
+                city: "Buenos Aires",
+                status: "Tickets a la venta",
+              },
+              {
+                date: "22 Nov 2025",
+                venue: "Festival Metal Córdoba",
+                city: "Córdoba",
+                status: "Próximamente",
+              },
             ].map((show, i) => (
-              <div key={i} className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col md:flex-row justify-between items-start md:items-center">
+              <div
+                key={i}
+                className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col md:flex-row justify-between items-start md:items-center"
+              >
                 <div>
                   <div className="text-amber-400 font-bold">{show.date}</div>
                   <div className="text-white mt-1">{show.venue}</div>
                   <div className="text-gray-400">{show.city}</div>
                 </div>
-                <span className="mt-4 md:mt-0 text-gray-300">{show.status}</span>
+                <span className="mt-4 md:mt-0 text-gray-300">
+                  {show.status}
+                </span>
               </div>
             ))}
           </div>
@@ -102,8 +123,12 @@ export default function SingerLanding() {
       {/* Contrataciones */}
       <section className="w-full py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white">¿Querés contratarme?</h2>
-          <p className="mt-4 text-gray-400">Disponible para festivales, eventos privados y colaboraciones.</p>
+          <h2 className="text-3xl font-bold text-white">
+            ¿Querés contratarme?
+          </h2>
+          <p className="mt-4 text-gray-400">
+            Disponible para festivales, eventos privados y colaboraciones.
+          </p>
 
           <form
             action="https://formspree.io/f/TU_FORM_ID"
@@ -111,7 +136,9 @@ export default function SingerLanding() {
             className="mt-8 space-y-4 text-left"
           >
             <div>
-              <label className="block mb-2 text-gray-300">Nombre del evento / Booker</label>
+              <label className="block mb-2 text-gray-300">
+                Nombre del evento / Booker
+              </label>
               <input
                 type="text"
                 name="name"
@@ -157,10 +184,30 @@ export default function SingerLanding() {
         <div className="max-w-4xl mx-auto px-4">
           <p className="text-gray-400 mb-4">Seguí mi viaje musical</p>
           <div className="flex justify-center space-x-6">
-            <a href="https://instagram.com/subjona" className="text-gray-400 hover:text-white transition">Instagram</a>
-            <a href="https://tiktok.com/@subjona" className="text-gray-400 hover:text-white transition">TikTok</a>
-            <a href="https://youtube.com/@subjona" className="text-gray-400 hover:text-white transition">YouTube</a>
-            <a href="https://spotify.com/artist/..." className="text-gray-400 hover:text-white transition">Spotify</a>
+            <a
+              href="https://instagram.com/subjona"
+              className="text-gray-400 hover:text-white transition"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://tiktok.com/@subjona"
+              className="text-gray-400 hover:text-white transition"
+            >
+              TikTok
+            </a>
+            <a
+              href="https://youtube.com/@subjona"
+              className="text-gray-400 hover:text-white transition"
+            >
+              YouTube
+            </a>
+            <a
+              href="https://spotify.com/artist/..."
+              className="text-gray-400 hover:text-white transition"
+            >
+              Spotify
+            </a>
           </div>
         </div>
       </section>
@@ -173,7 +220,11 @@ export default function SingerLanding() {
         className="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-500 text-white p-4 rounded-full shadow-lg transition"
         aria-label="Contratar por WhatsApp"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-6 h-6 fill-current">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          className="w-6 h-6 fill-current"
+        >
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
       </a>
