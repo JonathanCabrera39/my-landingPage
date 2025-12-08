@@ -1,8 +1,8 @@
 // src/pages/BeatmakerLanding.tsx
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "../../components/sections/AnimatedSection";
-import ScrollSection from "../../components/ScrollSection";
+import ScrollSection from "../../components/sections/ScrollSection";
 import LoadingScreen from "../../components/ui/LoadingScreen";
 import FAQ from "../components/FAQ";
 import ScrollToTop from "../../components/ui/ScrollToTop";

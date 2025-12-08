@@ -14,6 +14,7 @@ import Testimonials from "../components/sections/Testimonials";
 import WhatsAppButton from "../components/ui/WhatsAppButton";
 import logo2 from "../image/logo.png";
 //import { beatmakerTheme } from '../theme/landing-themes';
+import { subjonaServices } from '../components/data/subjonaServices';
 
 export default function Home() {
   return (
@@ -57,16 +58,31 @@ export default function Home() {
           },
         ]}
       />
-      <Services
-        id="services" // Puedes pasar el id si lo requiere tu layout general
-        title="Lo que ofrezco "
-        subtitle="Soluciones simples, rápidas y efectivas para emprendedores que quieren vender YA."
-        preset="subjona"
-        backgroundColor="bg-gradient-to-r from-blue-950 to-blue-800"
-        titleBackgroundColor="bg-gray-50 rounded-xl"
-        textColor="text-black" // Ajusta según el contraste deseado
-        cardClass="bg-gray-50 p-8 rounded-xl hover:to-blue-300 shadow-sm hover:shadow-md transition text-gray-800" // Clases específicas para las tarjetas
-      />
+       <Services
+      id="servicios"
+      title="Lo que ofrezco"
+      subtitle="Soluciones simples, rápidas y efectivas para emprendedores que quieren vender YA."
+      services={subjonaServices}
+      // Personalizar contenedor principal
+      containerClassName="bg-gradient-to-r from-blue-950 to-blue-800 py-20"
+      containerStyle={{ minHeight: '500px' }} // Ejemplo de estilo inline
+      // Personalizar área de título/subtítulo
+      titleAreaClassName="bg-gray-50 text-center mb-16 rounded-xl p-4"
+      titleClassName="text-4xl font-extrabold tracking-tight text-gray-800"
+      subtitleClassName="text-lg text-gray-600 max-w-2xl mx-auto"
+      // Personalizar grilla
+      gridClassName="grid grid-cols-1 md:grid-cols-3 gap-10"
+      // Personalizar tarjetas
+      cardClassName="bg-white p-8 rounded-xl shadow-sm transition text-gray-800"
+      cardHoverClassName="hover:shadow-md hover:scale-105" // Aplicar efectos de hover
+      cardStyle={{ border: '1px solid #e5e7eb' }} // Ejemplo de estilo inline en la tarjeta
+      // Personalizar icono
+      iconClassName="text-3xl mb-3 text-indigo-600"
+      // Personalizar título del servicio
+      serviceTitleClassName="text-xl font-bold mb-3 text-gray-800"
+      // Personalizar descripción del servicio
+      serviceDescriptionClassName="text-gray-600"
+    />
       <Portfolio
         id="portafolio"
         preset="subjona"
