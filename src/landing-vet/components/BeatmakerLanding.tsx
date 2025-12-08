@@ -9,7 +9,6 @@ import ScrollToTop from "../../components/ui/ScrollToTop";
 
 export default function BeatmakerLanding() {
   const [selectedBeat, setSelectedBeat] = useState("dark-fire");
-  //const [licenseType, setLicenseType] = useState("lease-basica");
   const [playingBeat, setPlayingBeat] = useState<string | null>(null);
   const [intensity, setIntensity] = useState(180); // 100 = valor por defecto (tu /100)
   const [showControls, setShowControls] = useState(false);
