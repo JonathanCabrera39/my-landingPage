@@ -1,16 +1,16 @@
 // src/routes/index.tsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import AppVet from "../landing-vet/components/Appvet";
+import AppVet from "../landing/components/Appvet";
 import ScrollToTop from "../components/ui/ScrollToTop";
-import GymLanding from "../landing-vet/components/GymLanding";
-import DoctorLanding from "../landing-vet/components/DoctorLanding";
-import LawyerLanding from "../landing-vet/components/LawyerLanding";
-import GameDevLanding from "../landing-vet/components/GameDevLanding";
-import BeatmakerLanding from "../landing-vet/components/BeatmakerLanding.0.1";
-import SingerLanding from "../landing-vet/components/SingerLanding";
-import GuitaristLanding from "../landing-vet/components/GuitaristLanding";
-import UrbanRitualDocument from "../landing-vet/components/UrbanRitualDocument";
+import GymLanding from "../landing/components/GymLanding";
+import DoctorLanding from "../landing/components/DoctorLanding";
+import LawyerLanding from "../landing/components/LawyerLanding";
+import GameDevLanding from "../landing/components/GameDevLanding";
+import BeatmakerLanding from "../landing/components/BeatmakerLanding.0.1";
+import SingerLanding from "../landing/components/SingerLanding";
+import GuitaristLanding from "../landing/components/GuitaristLanding";
+import UrbanRitualDocument from "../landing/components/UrbanRitualDocument";
 
 
 export default function AppRoutes() {

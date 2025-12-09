@@ -1,5 +1,6 @@
 // src/data/subjonaServices.ts (o servicesPresets.ts)
-import { Service } from '../sections/servicios2';
+import type { Service } from '../sections/servicios2';
+
 
 export const subjonaServices: Service[] = [
   {
