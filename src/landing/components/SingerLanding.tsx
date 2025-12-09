@@ -1,6 +1,6 @@
 // src/pages/SingerLanding.tsx
 import { useState } from "react";
-import { YouTubeSection } from "../../hooks/YouTubeSection";
+//import { YouTubeSection } from "../../hooks/YouTubeSection";
 
 export default function SingerLanding() {
   const [eventType, setEventType] = useState("show");

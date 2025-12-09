@@ -12,7 +12,7 @@ import Hero from "../../components/subcomponents/Hero";
 import Footer from "../../components/subcomponents/Footer";
 
 export default function GymLanding() {
-  const [goal, setGoal] = useState("perder-peso");
+  const [goal] = useState("perder-peso");
   // Estado
   const [pesoActual, setPesoActual] = useState(0);
   const [pesoMeta, setPesoMeta] = useState(0);

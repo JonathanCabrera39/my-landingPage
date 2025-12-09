@@ -1,5 +1,4 @@
 // src/components/layout/Footer.tsx
-import React from 'react';
 
 interface SocialLink {
   name: string;

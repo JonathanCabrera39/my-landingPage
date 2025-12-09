@@ -20,6 +20,7 @@ interface ContactProps {
   backgroundColor?: string; // Color de fondo si no hay backgroundClass
   overlayOpacity?: string;  // Opacidad del overlay (ej: "bg-black/60")
   textColor?: string;
+  subtextColor?: string;
   formBackgroundColor?: string;
   formTextColor?: string;
   formAction?: string; // Prop específica para la acción del formulario
@@ -65,6 +66,7 @@ export default function Contact({
   backgroundColor = preset === 'subjona' ? undefined : 'bg-gray-900', // Usar bgClass si está definido
   overlayOpacity = preset === 'subjona' ? 'bg-black/60' : undefined, // Aplicar overlay específico
   textColor = preset === 'subjona' ? 'text-white' : 'text-white',
+  subtextColor = preset === 'subjona' ? 'text-white' : 'text-white',
   formBackgroundColor = preset === 'subjona' ? 'bg-white/90' : 'bg-gray-800',
   formTextColor = preset === 'subjona' ? 'text-gray-800' : 'text-white',
   formAction: customFormAction,
@@ -123,14 +125,14 @@ export default function Contact({
       <div className={`max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 ${preset === 'subjona' ? 'text-center' : ''}`}>
         <h2 className={`text-3xl md:text-4xl font-bold ${textColor}`}>{title}</h2>
         <p className={`mt-4 text-lg ${preset === 'subjona' ? 'text-gray-200' : textColor}`}>
-          {subtitle}
+          {subtitle} {subtextColor}
         </p>
         {description && <p className="mt-2">{description}</p>} {/* Mostrar description si existe */}
 
         {submitSuccess ? (
           <div className="bg-green-600 text-white p-6 rounded-lg text-center mt-6">
-            <h3 className="text-xl font-semibold mb-2">¡Mensaje enviado!</h3>
-            <p>Gracias por contactarme. Te responderé pronto.</p>
+            <h3 className="text-xl font-semibold mb-2"> ¡Mensaje enviado!</h3>
+            <p> Gracias por contactarme. Te responderé pronto.</p>
           </div>
         ) : (
           <form
@@ -139,7 +141,7 @@ export default function Contact({
             onSubmit={isFormspree ? undefined : handleSubmit} // Usar handleSubmit si no es Formspree
             className={`mt-10 space-y-6 text-left ${preset === 'subjona' ? 'text-left' : ''}`}
           >
-            {formFields?.map((field, index) => (
+            {formFields?.map((field) => (
               field.type === 'textarea' ? (
                 <div key={field.name}>
                   <label htmlFor={field.name} className={`block ${preset === 'subjona' ? 'text-gray-200' : textColor} font-medium mb-2`}>

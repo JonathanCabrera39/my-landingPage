@@ -1,6 +1,6 @@
 // src/components/ScrollSection.tsx
 import { motion } from 'framer-motion';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from "../../hooks/useScrollAnimation"
 
 interface Props {
   children: React.ReactNode;

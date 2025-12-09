@@ -2,7 +2,7 @@ import Navbar from "../../components/layout/Navbar";
 import Sidebar from "../../components/layout/Sidebar";
 import Hero from "../../components/sections/Hero";
 import Footer from "../../components/layout/Footer";
-import Services from "../../components/sections/Services";
+import Services from "../../components/sections/servicios2";
 import Testimonials from "../../components/sections/Testimonials";
 import Contact from "../../components/sections/Contact";
 import FAQ from "../../components/sections/FAQ";
@@ -39,7 +39,7 @@ export default function BeatmakerLanding() {
         variant="temporary" // Puedes abrir/cerrar en móvil
         openOnMobile={false}
       />
-
+      
       {/* ✅ Hero */}
       <Hero
         title="Tu sonido merece esto"
@@ -160,17 +160,15 @@ export default function BeatmakerLanding() {
       <Contact
         title="Trabajemos Juntos"
         subtitle="¿Listo para tu próximo hit?"
+        subtextColor="bg-gray-700"
         description="Envíame un mensaje y trabajemos juntos en tu próximo proyecto musical."
         backgroundColor="bg-gray-900"
         textColor="text-white"
-        formBackgroundColor="bg-gray-800"
+        formBackgroundColor="bg-gray-700"
         formTextColor="text-white"
-        onSubmit={(data) => {
-          console.log("Form submitted:", data);
-          // ✅ Aquí puedes integrar con Formspree, EmailJS, etc.
-        }}
+        id="contacto" // Pasa el id específico
       />
-
+      {/* ✅ Aquí puedes integrar con Formspree, EmailJS, etc*/}.
       {/* ✅ Footer */}
       <Footer
         socialLinks={[

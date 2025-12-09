@@ -1,5 +1,5 @@
 // src/components/layout/Sidebar.tsx
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 interface SidebarProps {
   // ✅ Contenido del sidebar
@@ -75,7 +75,7 @@ export default function Sidebar({
   return (
     <>
       {/* ✅ Botón para abrir sidebar en móvil (si es temporal o móvil) */}
-      {(variant === 'temporary' || isMobile) && (
+      {(canToggle) && (
         <button
           onClick={toggleSidebar}
           className="fixed top-16 z-40 p-2 bg-gray-800 text-white rounded-md shadow-lg md:hidden"

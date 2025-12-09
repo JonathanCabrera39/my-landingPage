@@ -1,5 +1,5 @@
 // src/components/layout/Navbar.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface NavbarProps {
   // ✅ Logo
