@@ -34,7 +34,6 @@ interface ServicesProps {
   cardClassName?: string; // Clases base para cada tarjeta
   cardStyle?: React.CSSProperties; // Estilos inline para cada tarjeta
   cardHoverClassName?: string; // Clases adicionales para el estado hover de la tarjeta (ej: 'hover:shadow-xl hover:scale-105')
-  cardHoverStyle?: React.CSSProperties; // Estilos inline para el estado hover (menos común, Tailwind es preferible para hover)
 
   // Estilos del icono
   iconClassName?: string; // Clases para el contenedor del icono o el icono mismo
@@ -65,10 +64,9 @@ export default function Services({
   subtitleStyle,
   gridClassName = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
   gridStyle,
-  cardClassName = "rounded-lg p-6 shadow-lg transition-shadow", // Clases base, hover se añade después
+  cardClassName = "rounded-lg p-6 shadow-lg transition-shadow", // Clases base
   cardStyle,
-  cardHoverClassName = "hover:shadow-xl", // Clase específica para hover
-  cardHoverStyle,
+  cardHoverClassName = "hover:shadow-xl", // Clase específica para hover (usada con Tailwind)
   iconClassName = "text-4xl mb-4",
   iconStyle,
   serviceTitleClassName = "text-xl font-semibold mb-2",
@@ -76,13 +74,6 @@ export default function Services({
   serviceDescriptionClassName = "",
   serviceDescriptionStyle,
 }: ServicesProps) {
-
-  // Combinar clases base con clases de hover (si existen) y aplicar estilos
-  const getCardClassName = (isHovering: boolean) => {
-    // En este ejemplo, no manejamos hover con estado aquí, sino con Tailwind
-    // Simplemente combinamos las clases base con las de hover
-    return `${cardClassName} ${cardHoverClassName || ''}`.trim();
-  };
 
   return (
     <section id={id} className={containerClassName} style={containerStyle}>
@@ -99,7 +90,7 @@ export default function Services({
             <div
               key={index}
               // Combinar clases base y hover
-              className={getCardClassName(false)} // isHovering no se usa aquí, Tailwind maneja hover
+              className={`${cardClassName} ${cardHoverClassName || ''}`.trim()}
               style={cardStyle}
             >
               {service.icon && (
