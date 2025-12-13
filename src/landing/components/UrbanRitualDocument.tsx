@@ -456,13 +456,9 @@ const UrbanRitualDocument = () => {
           <p>
             Embebés el juego en WebAssembly:
           </p>
-          <pre className="bg-gray-900 p-4 rounded-lg text-sm my-2 font-mono text-gray-300">
-            &lt;div className="game-demo"&gt;
-              &lt;iframe src="/urban-ritual" width="100%" height="600" /&gt;
-            &lt;/div&gt;
-          </pre>
           <p>
-            Botón: <em className="text-violet-300">“¿Te gustó? Descargá la versión completa (200 cartas)”</em> → link a itch.io.
+            <em className="text-violet-300">“¿Te gustó? Descargá la versión completa (200 cartas)”</em> <br /> 
+            → link a itch.io.
           </p>
           <h3 className="text-xl font-semibold mb-3 mt-4 text-violet-300">Música</h3>
           <ul className="list-disc pl-6 space-y-2 border-l-2 border-red-700 pl-4">
