@@ -7,6 +7,13 @@ import Testimonials from "../../components/sections/Testimonials";
 import Contact from "../../components/sections/Contact";
 import FAQ from "../../components/sections/FAQ";
 
+import {
+  subjonaAuthorName,
+  subjonaAuthorLink,
+  subjonaCopyrightText,
+  subjonaSocialLinks,
+} from "../../components/data/beatFooter";
+
 export default function BeatmakerLanding() {
   return (
     <div className="bg-black min-h-screen">
@@ -39,7 +46,6 @@ export default function BeatmakerLanding() {
         variant="temporary" // Puedes abrir/cerrar en móvil
         openOnMobile={false}
       />
-      
       {/* ✅ Hero */}
       <Hero
         title="Tu sonido merece esto"
@@ -53,7 +59,6 @@ export default function BeatmakerLanding() {
         fontFamily="font-mono"
         ctaVariant="primary"
       />
-
       <Services
         title="Servicios de Producción"
         subtitle="Todo lo que necesitas para tu música"
@@ -171,26 +176,15 @@ export default function BeatmakerLanding() {
       {/* ✅ Aquí puedes integrar con Formspree, EmailJS, etc*/}.
       {/* ✅ Footer */}
       <Footer
-        socialLinks={[
-          {
-            name: "Instagram",
-            url: "https://instagram.com/beatmaker",
-            icon: "/icons/instagram.svg",
-          },
-          {
-            name: "SoundCloud",
-            url: "https://soundcloud.com/beatmaker",
-            icon: "/icons/soundcloud.svg",
-          },
-          {
-            name: "YouTube",
-            url: "https://youtube.com/beatmaker",
-            icon: "/icons/youtube.svg",
-          },
-        ]}
-        copyrightText="© 2025 Beatmaker Pro. Todos los derechos reservados."
-        backgroundColor="bg-gray-900"
-        textColor="text-gray-300"
+        authorName={subjonaAuthorName}
+        authorLink={subjonaAuthorLink}
+        copyrightText={subjonaCopyrightText}
+        socialLinks={subjonaSocialLinks}
+        // Personaliza estilos si es necesario
+        containerClassName="bg-gray-900 py-8"
+        authorLinkClassName="font-medium text-white hover:text-indigo-400 transition"
+        socialLinkClassName="hover:text-white transition text-gray-300"
+        socialAreaClassName="mt-4 flex justify-center space-x-6 text-sm"
       />
     </div>
   );
