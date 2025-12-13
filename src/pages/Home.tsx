@@ -16,6 +16,13 @@ import logo2 from "../image/logo.png";
 //import { beatmakerTheme } from '../theme/landing-themes';
 import { subjonaServices } from '../components/data/subjonaServices';
 
+import { 
+  subjonaAuthorName, 
+  subjonaAuthorLink, 
+  subjonaCopyrightText, 
+  subjonaSocialLinks 
+} from "../components/data/subjonaFooter"; // Ajusta la ruta
+
 export default function Home() {
   return (
     <div className="w-full bg-gradient-to-r from-blue-950 to-blue-800 ">
@@ -110,11 +117,17 @@ export default function Home() {
         size="md" // Opcional: 'sm', 'md', 'lg'
         // Puedes añadir className si necesitas estilos extra
       />
-      <Footer
-        preset="subjona" // Usa el preset específico de subjona
-        // Puedes sobreescribir estilos si es necesario, pero ya están definidos en el preset
-        // backgroundColor="bg-blue-100" // Esto sobreescribiría el valor del preset 'subjona'
-      />
+        <Footer
+      authorName={subjonaAuthorName}
+      authorLink={subjonaAuthorLink}
+      copyrightText={subjonaCopyrightText}
+      socialLinks={subjonaSocialLinks}
+      // Personaliza estilos si es necesario
+      containerClassName="bg-gray-900 py-8"
+      authorLinkClassName="font-medium text-white hover:text-indigo-400 transition"
+      socialLinkClassName="hover:text-white transition text-gray-300"
+      socialAreaClassName="mt-4 flex justify-center space-x-6 text-sm"
+    />
     </div>
   );
 }
