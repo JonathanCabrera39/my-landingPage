@@ -1,7 +1,7 @@
 // src/components/sections/PortfolioGeneric.tsx
 import { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 interface PortfolioItem {
   id: string;

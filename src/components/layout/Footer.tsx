@@ -53,7 +53,7 @@ const DEFAULT_AUTHOR_TEXT_CLASSNAME = "text-sm";
 const DEFAULT_AUTHOR_LINK_CLASSNAME = "font-medium text-white hover:text-indigo-400 transition";
 const DEFAULT_COPYRIGHT_TEXT_CLASSNAME = "mt-2 text-xs";
 const DEFAULT_SOCIAL_AREA_CLASSNAME = "mt-4 flex justify-center space-x-6 text-sm";
-const DEFAULT_SOCIAL_LINK_CLASSNAME = "hover:text-white  transition";
+const DEFAULT_SOCIAL_LINK_CLASSNAME = "hover:text-white transition";
 
 export default function Footer({
   authorName = DEFAULT_AUTHOR_NAME,

@@ -388,6 +388,7 @@ export default function BeatmakerLanding() {
         {/* FAQ */}
         <ScrollSection delay={0.2}>
           <FAQ
+          id="faq"
             title="¿Tienes dudas sobre los beats?"
             description="Respuestas claras, sin tecnicismos."
             items={[

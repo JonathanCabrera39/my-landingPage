@@ -5,7 +5,7 @@ import Footer from "../../components/layout/Footer";
 import Services from "../../components/sections/servicios2";
 import Testimonials from "../../components/sections/Testimonials";
 import Contact from "../../components/sections/Contact";
-import FAQ from "../../components/sections/Faq";
+import Faq from "../../components/sections/Faq";
 
 import {
   subjonaAuthorName,
@@ -48,6 +48,7 @@ export default function BeatmakerLanding() {
       />
       {/* ✅ Hero */}
       <Hero
+        id="hero"
         title="Tu sonido merece esto"
         subtitle="Producción profesional, beats únicos, sin límites"
         ctaText="Escucha mi último track"
@@ -131,7 +132,7 @@ export default function BeatmakerLanding() {
         cardTextColor="text-white"
       />
       {/* ✅ FAQ */}
-      <FAQ
+      <Faq
         title="Preguntas Frecuentes"
         subtitle="Todo lo que necesitas saber"
         faqs={[
