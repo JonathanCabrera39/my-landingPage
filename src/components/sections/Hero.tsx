@@ -8,6 +8,7 @@ interface CTAButton {
 }
 
 interface HeroProps {
+  id: string;
   title: string;
   subtitle: string;
   ctaButtons?: CTAButton[];
@@ -24,6 +25,7 @@ interface HeroProps {
 }
 
 export default function Hero({
+  id,
   title,
   subtitle,
   ctaText,
@@ -55,6 +57,7 @@ export default function Hero({
 
   return (
     <section
+     id = {id}
       className={`
         ${
           backgroundClass || backgroundColor

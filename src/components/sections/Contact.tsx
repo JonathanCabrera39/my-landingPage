@@ -45,7 +45,7 @@ const contactPresets: Record<string, ContactFormPreset> = {
   },
   subjona: {
     title: "¿Listo para empezar?",
-    subtitle: "Escríbeme por WhatsApp o llena este formulario. Te respondo en menos de 2 horas.",
+    subtitle: "Escríbeme por WhatsApp o llena este formulario. Te respondo en menos de 12 horas.",
     description: "", // No se usa en este preset, el texto está en el subtitle
     formAction: "https://formspree.io/f/xkgpbwpy", // Acción específica de Formspree
     formFields: [
@@ -66,13 +66,13 @@ export default function Contact({
   backgroundColor = preset === 'subjona' ? undefined : 'bg-gray-900', // Usar bgClass si está definido
   overlayOpacity = preset === 'subjona' ? 'bg-black/60' : undefined, // Aplicar overlay específico
   textColor = preset === 'subjona' ? 'text-white' : 'text-white',
-  subtextColor = preset === 'subjona' ? 'text-white' : 'text-white',
+  subtextColor = preset === 'subjona' ? undefined : 'text-white',
   formBackgroundColor = preset === 'subjona' ? 'bg-white/90' : 'bg-gray-800',
   formTextColor = preset === 'subjona' ? 'text-gray-800' : 'text-white',
   formAction: customFormAction,
   formFields: customFormFields,
   inputClassName = preset === 'subjona' ? "border border-gray-300 bg-white/90 focus:ring-2 focus:ring-indigo-500 focus:border-transparent" : "border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500",
-  buttonClassName = preset === 'subjona' ? "bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition" : "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition",
+  buttonClassName = preset === 'subjona' ? "bg-blue-600 hover:bg-blue-900 text-white font-bold py-3 px-6 rounded-lg text-lg transition" : "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition",
 }: ContactProps) {
 
   // Obtener los valores del preset o usar los personalizados

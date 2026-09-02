@@ -16,7 +16,7 @@ interface FAQProps {
   itemTextColor?: string;
 }
 
-export default function FAQ({
+export default function Faq({
   title = "Preguntas Frecuentes",
   subtitle = "Todo lo que necesitas saber",
   faqs = [],

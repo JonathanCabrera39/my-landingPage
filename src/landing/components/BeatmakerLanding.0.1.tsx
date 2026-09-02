@@ -5,7 +5,7 @@ import Footer from "../../components/layout/Footer";
 import Services from "../../components/sections/servicios2";
 import Testimonials from "../../components/sections/Testimonials";
 import Contact from "../../components/sections/Contact";
-import FAQ from "../../components/sections/FAQ";
+import FAQ from "../../components/sections/Faq";
 
 import {
   subjonaAuthorName,

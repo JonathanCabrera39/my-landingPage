@@ -1,5 +1,7 @@
 //import Contact from "../components/Contact";
 import Contact from "../components/sections/Contact";
+//import Faq from "../components/sections/FAQ";
+
 //import Footer from "../components/Footer";
 import Footer from "../components/layout/Footer";
 import Hero from "../components/sections/Hero";
@@ -12,7 +14,7 @@ import Portfolio from "../components/sections/Portfolio";
 import Testimonials from "../components/sections/Testimonials";
 //import WhatsAppButton from "../components/WhatsAppButton";
 import WhatsAppButton from "../components/ui/WhatsAppButton";
-import logo2 from "../image/logo.png";
+import logo2 from "../image/subjona.png";
 //import { beatmakerTheme } from '../theme/landing-themes';
 import { subjonaServices } from '../components/data/subjonaServices';
 
@@ -22,10 +24,11 @@ import {
   subjonaCopyrightText, 
   subjonaSocialLinks 
 } from "../components/data/subjonaFooter"; // Ajusta la ruta
+import FAQ, { faqData } from "../landing/components/FAQ";
 
 export default function Home() {
   return (
-    <div className="w-full bg-gradient-to-r from-blue-950 to-blue-800 ">
+    <div className="w-full bg-gradient-to-r  from-blue-950 to-blue-800 ">
       <Navbar
         logo={logo2}
         logoAlt="Subjona"
@@ -35,15 +38,23 @@ export default function Home() {
           { name: "Inicio", url: "#inicio" },
           { name: "Servicios", url: "#servicios" },
           { name: "Contacto", url: "#contacto" },
+          { name: "FAQ", url: "#FAQ" },
+          { name: "Platillas", url: "#portafolio" },
+
+          { name: "Portafolio", url: "#portafolio" },
+
+          
+
         ]}
         ctaText="Cotizar"
         ctaLink="#contacto"
-        backgroundColor="bg-blue-950"
-        textColor="text-gray-600 hover-blue-200"
+        textColor="text-gray-200 p-2"
+        backgroundColor="bg-blue-950 "
         mobileMenuColor="text-gray-500"
       />
       {/* <HeroViejo/> */}
       <Hero
+       id= "inicio"
         // {...applyTheme(beatmakerTheme, 'hero')}  // ✅ Aplica tema base
         title="Transforma tu idea en realidad"
         subtitle="Diseño landing pages profesionales..."
@@ -104,6 +115,13 @@ export default function Home() {
         // Puedes sobreescribir estilos si es necesario, pero ya están definidos en el preset
         // backgroundColor="bg-blue-100" // Esto sobreescribiría el valor del preset 'subjona'
       />
+        <FAQ 
+        id="FAQ"
+        title="Preguntas Frecuentes"
+        description="Resolvemos tus dudas antes de empezar."
+        items={faqData} // ✅ ¡Esto es obligatorio y debe ser un array!
+        initialVisible={2}
+      />
       <Contact
         id="contacto" // Pasa el id específico
         preset="subjona" // Usa el preset específico de subjona
@@ -125,7 +143,7 @@ export default function Home() {
       // Personaliza estilos si es necesario
       containerClassName="bg-gray-900 py-8"
       authorLinkClassName="font-medium text-white hover:text-indigo-400 transition"
-      socialLinkClassName="hover:text-white transition text-gray-300"
+      socialLinkClassName="hover:text-green-400 transition text-gray-300"
       socialAreaClassName="mt-4 flex justify-center space-x-6 text-sm"
     />
     </div>
