@@ -16,15 +16,16 @@ import Testimonials from "../components/sections/Testimonials";
 import WhatsAppButton from "../components/ui/WhatsAppButton";
 import logo2 from "../image/subjona.png";
 //import { beatmakerTheme } from '../theme/landing-themes';
-import { subjonaServices } from '../components/data/subjonaServices';
+import { subjonaServices } from "../components/data/subjonaServices";
 
-import { 
-  subjonaAuthorName, 
-  subjonaAuthorLink, 
-  subjonaCopyrightText, 
-  subjonaSocialLinks 
+import {
+  subjonaAuthorName,
+  subjonaAuthorLink,
+  subjonaCopyrightText,
+  subjonaSocialLinks,
 } from "../components/data/subjonaFooter"; // Ajusta la ruta
 import FAQ, { faqData } from "../landing/components/FAQ";
+import UpcomingProjects from "../components/sections/UpcomingProjects";
 
 export default function Home() {
   return (
@@ -39,12 +40,9 @@ export default function Home() {
           { name: "Servicios", url: "#servicios" },
           { name: "Contacto", url: "#contacto" },
           { name: "FAQ", url: "#FAQ" },
-          { name: "Platillas", url: "#portafolio" },
-
+          { name: "Platillas", url: "https://demo.subjona.com/" },
           { name: "Portafolio", url: "#portafolio" },
-
-          
-
+          { name: "Proyectos", url: "#proximamente" },
         ]}
         ctaText="Cotizar"
         ctaLink="#contacto"
@@ -54,7 +52,7 @@ export default function Home() {
       />
       {/* <HeroViejo/> */}
       <Hero
-       id= "inicio"
+        id="inicio"
         // {...applyTheme(beatmakerTheme, 'hero')}  // ✅ Aplica tema base
         title="Transforma tu idea en realidad"
         subtitle="Diseño landing pages profesionales..."
@@ -76,31 +74,31 @@ export default function Home() {
           },
         ]}
       />
-       <Services
-      id="servicios"
-      title="Lo que ofrezco"
-      subtitle="Soluciones simples, rápidas y efectivas para emprendedores que quieren vender YA."
-      services={subjonaServices}
-      // Personalizar contenedor principal
-      containerClassName="bg-gradient-to-r from-blue-950 to-blue-800 py-20"
-      containerStyle={{ minHeight: '500px' }} // Ejemplo de estilo inline
-      // Personalizar área de título/subtítulo
-      titleAreaClassName="bg-gray-50 text-center mb-16 rounded-xl p-4"
-      titleClassName="text-4xl font-extrabold tracking-tight text-gray-800"
-      subtitleClassName="text-lg text-gray-600 max-w-2xl mx-auto"
-      // Personalizar grilla
-      gridClassName="grid grid-cols-1 md:grid-cols-3 gap-10"
-      // Personalizar tarjetas
-      cardClassName="bg-white p-8 rounded-xl shadow-sm transition text-gray-800"
-      cardHoverClassName="hover:shadow-md hover:scale-105" // Aplicar efectos de hover
-      cardStyle={{ border: '1px solid #e5e7eb' }} // Ejemplo de estilo inline en la tarjeta
-      // Personalizar icono
-      iconClassName="text-3xl mb-3 text-indigo-600"
-      // Personalizar título del servicio
-      serviceTitleClassName="text-xl font-bold mb-3 text-gray-800"
-      // Personalizar descripción del servicio
-      serviceDescriptionClassName="text-gray-600"
-    />
+      <Services
+        id="servicios"
+        title="Lo que ofrezco"
+        subtitle="Soluciones simples, rápidas y efectivas para emprendedores que quieren vender YA."
+        services={subjonaServices}
+        // Personalizar contenedor principal
+        containerClassName="bg-gradient-to-r from-blue-950 to-blue-800 py-20"
+        containerStyle={{ minHeight: "500px" }} // Ejemplo de estilo inline
+        // Personalizar área de título/subtítulo
+        titleAreaClassName="bg-gray-50 text-center mb-16 rounded-xl p-4"
+        titleClassName="text-4xl font-extrabold tracking-tight text-gray-800"
+        subtitleClassName="text-lg text-gray-600 max-w-2xl mx-auto"
+        // Personalizar grilla
+        gridClassName="grid grid-cols-1 md:grid-cols-3 gap-10"
+        // Personalizar tarjetas
+        cardClassName="bg-white p-8 rounded-xl shadow-sm transition text-gray-800"
+        cardHoverClassName="hover:shadow-md hover:scale-105" // Aplicar efectos de hover
+        cardStyle={{ border: "1px solid #e5e7eb" }} // Ejemplo de estilo inline en la tarjeta
+        // Personalizar icono
+        iconClassName="text-3xl mb-3 text-indigo-600"
+        // Personalizar título del servicio
+        serviceTitleClassName="text-xl font-bold mb-3 text-gray-800"
+        // Personalizar descripción del servicio
+        serviceDescriptionClassName="text-gray-600"
+      />
       <Portfolio
         id="portafolio"
         preset="subjona"
@@ -109,13 +107,14 @@ export default function Home() {
         title="¿Cuál es tu negocio?"
         subtitle="No vendo plantillas. Diseño landings hechas para <strong>tu</strong> audiencia."
       />
+      <UpcomingProjects />
       <Testimonials
         id="testimonios" // Pasa el id específico
         preset="subjona" // Usa el preset específico de subjona
         // Puedes sobreescribir estilos si es necesario, pero ya están definidos en el preset
         // backgroundColor="bg-blue-100" // Esto sobreescribiría el valor del preset 'subjona'
       />
-        <FAQ 
+      <FAQ
         id="FAQ"
         title="Preguntas Frecuentes"
         description="Resolvemos tus dudas antes de empezar."
@@ -135,17 +134,17 @@ export default function Home() {
         size="md" // Opcional: 'sm', 'md', 'lg'
         // Puedes añadir className si necesitas estilos extra
       />
-        <Footer
-      authorName={subjonaAuthorName}
-      authorLink={subjonaAuthorLink}
-      copyrightText={subjonaCopyrightText}
-      socialLinks={subjonaSocialLinks}
-      // Personaliza estilos si es necesario
-      containerClassName="bg-gray-900 py-8"
-      authorLinkClassName="font-medium text-white hover:text-indigo-400 transition"
-      socialLinkClassName="hover:text-green-400 transition text-gray-300"
-      socialAreaClassName="mt-4 flex justify-center space-x-6 text-sm"
-    />
+      <Footer
+        authorName={subjonaAuthorName}
+        authorLink={subjonaAuthorLink}
+        copyrightText={subjonaCopyrightText}
+        socialLinks={subjonaSocialLinks}
+        // Personaliza estilos si es necesario
+        containerClassName="bg-gray-900 py-8"
+        authorLinkClassName="font-medium text-white hover:text-indigo-400 transition"
+        socialLinkClassName="hover:text-green-400 transition text-gray-300"
+        socialAreaClassName="mt-4 flex justify-center space-x-6 text-sm"
+      />
     </div>
   );
 }

@@ -100,7 +100,7 @@ export default function FAQ({
           {visibleItems.map((item, index) => (
             <div
               key={index}
-              className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700"
+              className="bg-gray-900 rounded-xl overflow-hidden border border-gray-700"
             >
               <button
                 className="w-full flex justify-between items-center p-6 text-left hover:bg-gray-750 transition-colors"
@@ -147,7 +147,7 @@ export default function FAQ({
           <div className="mt-8 text-center">
             <button
               onClick={toggleShowAll}
-              className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg border border-gray-700 transition-colors"
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-900  text-white font-medium rounded-lg border border-gray-700 transition-colors"
             >
               {showAll
                 ? `Ver menos preguntas`

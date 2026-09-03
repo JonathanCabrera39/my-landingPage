@@ -64,14 +64,14 @@ const portfolioPresets = {
           title: "Doctor",
           desc: "Consultorio médico con turnos online y datos de contacto claros.",
           gradient: "from-blue-950 to-blue-800",
-          path: "https://demo.subjona.com/doc", // ✅ Actualizado a subdominio
+          path: "https://demo.subjona.com/doctor", // ✅ Actualizado a subdominio
         },
         {
           id: "lawyer",
           title: "Abogado",
           desc: "Servicios legales con enfoque en confianza y profesionalismo.",
           gradient: "from-gray-900 to-zinc-800",
-          path: "https://demo.subjona.com/law", // ✅ Actualizado a subdominio
+          path: "https://demo.subjona.com/lawyer", // ✅ Actualizado a subdominio
         },
       ],
       defaultVisibleCount: 2,
