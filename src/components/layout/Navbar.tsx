@@ -88,7 +88,7 @@ export default function Navbar({
         backdrop-blur-sm bg-opacity-90
       `}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* ✅ Logo */}
           <div className="flex-shrink-0 flex rounded-tl-full rounded-br-full rounded-tr-none rounded-bl-none">
@@ -100,7 +100,7 @@ export default function Navbar({
           </div>
 
           {/* ✅ Links de escritorio */}
-          <div className="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+          <div className="hidden me-4 md:ml-6 md:flex md:items-center md:space-x-8">
             {links.map((link, index) => (
               <a
                 key={index}
