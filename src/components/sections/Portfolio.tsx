@@ -1,7 +1,7 @@
 // src/components/sections/PortfolioGeneric.tsx
 import { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 interface PortfolioItem {
   id: string;
@@ -50,28 +50,28 @@ const portfolioPresets = {
           title: "Veterinario",
           desc: "Landing para clínica veterinaria con horarios, servicios y WhatsApp.",
           gradient: "from-emerald-900 to-teal-800",
-          path: "/vet",
+          path: "https://demo.subjona.com/vet", // ✅ Actualizado a subdominio
         },
         {
           id: "gym",
           title: "Coach de Ejercicio",
           desc: "Promoción de planes de entrenamiento + formulario de contacto.",
           gradient: "from-amber-900 to-orange-800",
-          path: "/gym",
+          path: "https://demo.subjona.com/gym", // ✅ Actualizado a subdominio
         },
         {
           id: "doctor",
           title: "Doctor",
           desc: "Consultorio médico con turnos online y datos de contacto claros.",
           gradient: "from-blue-950 to-blue-800",
-          path: "/doc",
+          path: "https://demo.subjona.com/doc", // ✅ Actualizado a subdominio
         },
         {
           id: "lawyer",
           title: "Abogado",
           desc: "Servicios legales con enfoque en confianza y profesionalismo.",
           gradient: "from-gray-900 to-zinc-800",
-          path: "/law",
+          path: "https://demo.subjona.com/law", // ✅ Actualizado a subdominio
         },
       ],
       defaultVisibleCount: 2,
@@ -85,33 +85,34 @@ const portfolioPresets = {
           title: "Creador de Juegos",
           desc: "Portafolio de juegos 2D + tienda de demos y contacto.",
           gradient: "from-purple-900 to-fuchsia-800",
-          path: "/gamedev",
+          path: "https://demo.subjona.com/gamedev", // ✅ Actualizado a subdominio
         },
         {
           id: "beatmaker",
           title: "Beatmaker",
           desc: "Catálogo de beats, player embebido y enlace a compra.",
           gradient: "from-rose-900 to-red-800",
-          path: "/baet", // Asumiendo que este es el path correcto
+          path: "https://demo.subjona.com/baet", // ✅ CORREGIDO: Era 'url' y tenía '/https'
         },
         {
           id: "singer",
           title: "Cantante",
           desc: "Próximos shows, música, redes y formulario para contrataciones.",
           gradient: "from-indigo-900 to-purple-800",
-          path: "/singer",
+          path: "https://demo.subjona.com/singer", // ✅ Actualizado a subdominio
         },
         {
           id: "guitarist",
           title: "Guitarrista",
           desc: "Clases online + demos + contacto para sesiones.",
           gradient: "from-cyan-900 to-blue-800",
-          path: "/guitar",
+          path: "https://demo.subjona.com/guitar", // ✅ Actualizado a subdominio
         },
       ],
       defaultVisibleCount: 2,
     },
   ],
+
 };
 
 export default function PortfolioGeneric({
@@ -123,7 +124,7 @@ export default function PortfolioGeneric({
   title = preset === 'subjona' ? "¿Cuál es tu negocio?" : "Portafolio",
   subtitle = preset === 'subjona' ? "No vendo plantillas. Diseño landings hechas para <strong>tu</strong> audiencia." : "Nuestro Portafolio",
 }: PortfolioGenericProps) {
-  const navigate = useNavigate();
+ // const navigate = useNavigate();
 
   // Usar secciones del preset o las personalizadas
   const sectionsToRender = customSections || portfolioPresets[preset] || [];
@@ -201,17 +202,17 @@ export default function PortfolioGeneric({
               >
                 <AnimatePresence>
                   {itemsToShow.map((item, i) => (
-                    <motion.div
+                    <motion.a
                       key={item.id}
                       custom={i}
                       variants={itemVariants}
                       initial="hidden"
                       animate="visible"
                       exit="exit"
+                      href={item.path}
+                    // target="_blank"
                       className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden w-full max-w-md cursor-pointer"
-                      onClick={() => {
-                        if (item.path) navigate(item.path);
-                      }}
+                     
                     >
                       <div
                         className={`h-32 bg-gradient-to-r ${item.gradient} flex items-center justify-center`}
@@ -223,7 +224,7 @@ export default function PortfolioGeneric({
                       <div className="p-4">
                         <p className="text-sm text-gray-600">{item.desc}</p>
                       </div>
-                    </motion.div>
+                    </motion.a>
                   ))}
                 </AnimatePresence>
               </div>

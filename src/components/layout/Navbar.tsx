@@ -1,33 +1,24 @@
 // src/components/layout/Navbar.tsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react'; // ✅ 1. Agregamos useEffect
 
 interface NavbarProps {
-  // ✅ Logo
-  logo?: string;                    // URL de la imagen
-  logoAlt?: string;                 // texto alternativo
-  logoWidth?: string;               // ej: "w-10", "w-16"
-  logoHeight?: string;              // ej: "h-10", "h-16"
-
-  // ✅ Enlaces de navegación
+  logo?: string;
+  logoAlt?: string;
+  logoWidth?: string;
+  logoHeight?: string;
   links: { name: string; url: string }[];
-
-  // ✅ Botón de CTA
-  ctaText?: string;                 // texto del botón
-  ctaLink?: string;                 // enlace del botón
-  ctaVariant?: 'primary' | 'secondary'; // estilos del botón
-
-  // ✅ Estilos visuales
-  backgroundColor?: string;         // ej: "bg-white", "bg-black", "bg-gray-900"
-  textColor?: string;               // ej: "text-gray-900", "text-white"
-  borderColor?: string;             // ej: "border-gray-200", "border-gray-700"
-  shadow?: boolean;                 // true = con sombra, false = sin sombra
-
-  // ✅ Responsive
-  mobileMenuColor?: string;         // color del menú móvil (botón hamburguesa)
+  ctaText?: string;
+  ctaLink?: string;
+  ctaVariant?: 'primary' | 'secondary';
+  backgroundColor?: string;
+  textColor?: string;
+  borderColor?: string;
+  shadow?: boolean;
+  mobileMenuColor?: string;
 }
 
 export default function Navbar({
-  logo = "/logo.png",              // valor por defecto
+  logo = "/logo.png",
   logoAlt = "Logo",
   logoWidth = "w-10",
   logoHeight = "h-10",
@@ -42,8 +33,37 @@ export default function Navbar({
   mobileMenuColor = 'text-gray-600'
 }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  // ✅ 2. Estados para controlar la visibilidad y la posición del scroll
+   const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // ✅ Estilos del botón según variant
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollThreshold = 50; // ✅ "Cierta cantidad de px" (ajusta este valor si quieres más/menos sensibilidad)
+      const scrollThresholdUp = 20; // ✅ "Cierta cantidad de px" (ajusta este valor si quieres más/menos sensibilidad)
+
+      // 1. Si estamos en el tope de la página, siempre visible
+      if (currentScrollY < 150) {
+        setIsVisible(true);
+      } 
+      // 2. Si bajamos MÁS del umbral respecto a la última posición -> Ocultar
+      else if (currentScrollY > lastScrollY + scrollThresholdUp) {
+        setIsVisible(false);
+      } 
+      // 3. Si subimos MÁS del umbral respecto a la última posición -> Mostrar
+      else if (currentScrollY < lastScrollY - scrollThreshold) {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   const ctaStyles = ctaVariant === 'primary' 
     ? 'bg-blue-600 text-white hover:bg-blue-700' 
     : 'bg-gray-100 text-gray-900 hover:bg-gray-200';
@@ -51,17 +71,27 @@ export default function Navbar({
   return (
     <nav 
       className={`
+        /* ✅ 4. Posición fija y animación suave */
+        fixed top-0 left-0 right-0 w-full z-50
+        transition-transform duration-300 ease-in-out
+        
+        /* ✅ 5. Lógica de mostrar/ocultar */
+        ${isVisible ? 'translate-y-0' : '-translate-y-full'}
+        
+        /* Estilos base */
         ${backgroundColor} 
         ${textColor} 
         ${borderColor} 
-        ${shadow ? 'shadow-md' : ''} 
-        fixed w-full z-50
+        ${shadow ? 'shadow-md' : ''}
+        
+        /* ✅ Opcional pero recomendado: efecto vidrio al hacer scroll */
+        backdrop-blur-sm bg-opacity-90
       `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* ✅ Logo */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0 flex rounded-tl-full rounded-br-full rounded-tr-none rounded-bl-none">
             <img 
               className={`${logoWidth} ${logoHeight}`} 
               src={logo} 
@@ -75,7 +105,7 @@ export default function Navbar({
               <a
                 key={index}
                 href={link.url}
-                className="text-sm font-medium hover:opacity-80 transition"
+                className="text-sm font-medium hover:text-blue-400 transition"
               >
                 {link.name}
               </a>
@@ -98,7 +128,7 @@ export default function Navbar({
           <div className="-mr-2 flex items-center md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`inline-flex items-center justify-center p-2 rounded-md ${mobileMenuColor} hover:opacity-80 focus:outline-none`}
+              className={`inline-flex items-center justify-center p-2 rounded-md ${mobileMenuColor} hover:text-blue-400 focus:outline-none`}
             >
               <svg
                 className="h-6 w-6"
@@ -120,13 +150,13 @@ export default function Navbar({
 
       {/* ✅ Menú móvil */}
       {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="pt-2 pb-3 space-y-1 px-4">
+        <div className="md:hidden border-t border-gray-200">
+          <div className="pt-4 pb-6 px-4 flex flex-wrap justify-center gap-x-2 gap-y-3">
             {links.map((link, index) => (
               <a
                 key={index}
                 href={link.url}
-                className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium hover:opacity-80 transition"
+                className="text-base font-medium text-gray-200 hover:text-blue-500 px-3 py-1.5 rounded-lg transition"
               >
                 {link.name}
               </a>
@@ -134,7 +164,7 @@ export default function Navbar({
             {ctaText && ctaLink && (
               <a
                 href={ctaLink}
-                className={`mt-4 block w-full text-center px-4 py-2 rounded-md text-base font-medium transition ${ctaStyles}`}
+                className={`mt-2 block w-full text-center px-4 py-2 rounded-md text-base font-medium transition ${ctaStyles}`}
               >
                 {ctaText}
               </a>

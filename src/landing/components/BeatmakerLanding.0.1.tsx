@@ -48,6 +48,7 @@ export default function BeatmakerLanding() {
       />
       {/* ✅ Hero */}
       <Hero
+        id="hero"
         title="Tu sonido merece esto"
         subtitle="Producción profesional, beats únicos, sin límites"
         ctaText="Escucha mi último track"

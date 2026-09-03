@@ -3,20 +3,24 @@
 @tailwind utilities;
 
 @layer components {
+
+  html {
+  scroll-behavior: smooth;
+}
   body {
     @apply m-0 p-0;
     opacity: 1;
     transition: opacity 0.3s ease;
   }
   .contact-bg {
-    background-image: url("./image/logo.png");
+    background-image: url("./image/subjona.png");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 90% 140%; /* desktop */
   }
   .hero-bg {
-    background-image: url("./image/logo.png");
+    background-image: url("./image/subjona.png");
     background-position: center 80%;
     background-repeat: no-repeat;
     background-attachment: fixed;
