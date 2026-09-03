@@ -5,7 +5,7 @@ import Footer from "../../components/layout/Footer";
 import Services from "../../components/sections/servicios2";
 import Testimonials from "../../components/sections/Testimonials";
 import Contact from "../../components/sections/Contact";
-import Faq from "../../components/sections/Faq";
+import FAQ from "../../components/sections/FAQ";
 
 import {
   subjonaAuthorName,
@@ -132,7 +132,7 @@ export default function BeatmakerLanding() {
         cardTextColor="text-white"
       />
       {/* ✅ FAQ */}
-      <Faq
+      <FAQ
         title="Preguntas Frecuentes"
         subtitle="Todo lo que necesitas saber"
         faqs={[

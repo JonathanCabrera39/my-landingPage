@@ -92,7 +92,7 @@ const portfolioPresets = {
           title: "Beatmaker",
           desc: "Catálogo de beats, player embebido y enlace a compra.",
           gradient: "from-rose-900 to-red-800",
-          path: "https://demo.subjona.com/beat", // ✅ CORREGIDO: Era 'url' y tenía '/https'
+          path: "https://demo.subjona.com/baet", // ✅ CORREGIDO: Era 'url' y tenía '/https'
         },
         {
           id: "singer",
