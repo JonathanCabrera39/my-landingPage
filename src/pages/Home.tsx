@@ -18,6 +18,9 @@ import logo2 from "../image/subjona.png";
 //import { beatmakerTheme } from '../theme/landing-themes';
 import { subjonaServices } from "../components/data/subjonaServices";
 
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
 import {
   subjonaAuthorName,
   subjonaAuthorLink,
@@ -28,6 +31,24 @@ import FAQ, { faqData } from "../landing/components/FAQ";
 import UpcomingProjects from "../components/sections/UpcomingProjects";
 
 export default function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Si la URL trae un hash (ej: #servicios o #proximamente)
+    if (location.hash) {
+      // Usamos un setTimeout muy breve. Esto es un "truco" vital en React 
+      // para asegurar que el DOM terminó de pintar los contenedores antes de buscar el ID.
+      setTimeout(() => {
+        const id = location.hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); 
+    }
+  }, [location]);
+
+
   return (
     <div className="w-full bg-gradient-to-r  from-blue-950 to-blue-800 ">
       <Navbar
