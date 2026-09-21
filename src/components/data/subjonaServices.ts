@@ -1,11 +1,10 @@
 // src/data/subjonaServices.ts (o servicesPresets.ts)
 import type { Service } from '../sections/servicios2';
 
-
 export const subjonaServices: Service[] = [
   {
     title: "Landing Pages Rápidas",
-    description: "Entrega en 24-48 horas. Diseño moderno, 100% responsive y optimizado para móviles.",
+    description: "Entrega en 48-72 horas. Diseño moderno, 100% responsive y optimizado para móviles.",
     icon: "⚡",
   },
   {
