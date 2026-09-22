@@ -1,5 +1,5 @@
 // src/data/subjonaFooter.ts
-import { SocialLink } from '../layout/Footer'; // Ajusta la ruta
+import { SocialLink } from '../subcomponents/Footer'; // Ajusta la ruta
 
 // Define los datos específicos para el footer de subjona
 export const subjonaAuthorName = 'Subjona';
