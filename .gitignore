@@ -48,3 +48,4 @@ pnpm-debug.log*
 # bun
 bun.lockb
 
+src/components/subcomponents/Footer.tsx
