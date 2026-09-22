@@ -22,7 +22,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 
-import FAQ, { faqData } from "../landing/components/FAQ";
+import FAQ, { faqData } from "../components/layout/FAQ";
 import UpcomingProjects from "../components/sections/UpcomingProjects";
 
 export default function Home() {
